@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Glow Astro – Your Cosmic Guide</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+    <div class="logo">✨ Glow Astro ✨</div>
+    <div class="subtitle">Your Cosmic Guide</div>
+</header>
+
+<main class="container">
+
+    <section class="card">
+
+        <h2>🌙 Enter Your Birth Details</h2>
+
+        <form id="astroForm">
+
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name"
+                   placeholder="Enter your name" required>
+
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob"
+                   name="date_of_birth" required>
+
+            <label for="time">Time of Birth</label>
+            <input type="time" id="time"
+                   name="time_of_birth" required>
+
+            <label for="country">Country</label>
+            <select id="country" name="country" required>
+                <option value="">Select Country</option>
+            </select>
+
+            <label for="state">State / Province / Region</label>
+            <select id="state" name="state" required disabled>
+                <option value="">Select Country First</option>
+            </select>
+
+            <label for="city">District / City</label>
+            <input type="text" id="city"
+                   name="district_city"
+                   placeholder="Enter district or city"
+                   required>
+
+            <button type="submit">
+                💾 Save Details
+            </button>
+
+        </form>
+
+        <div id="successMessage" class="success-message">
+            ✅ Your details have been saved successfully!
+        </div>
+
+        <div class="notice">
+            Your details are submitted through Formspree.
+        </div>
+
+    </section>
+
+
+    <section class="about-card">
+
+        <img src="channel.jpg"
+             alt="Glow Astro Channel"
+             class="channel-image">
+
+        <h2>About Glow Astro</h2>
+
+        <p>
+            Glow Astro is a YouTube channel created to bring
+            astrology in a simple and easy-to-understand way.
+        </p>
+
+        <p>
+            We share zodiac insights, spiritual guidance and
+            helpful tips for your journey.
+        </p>
+
+        <p>
+            Find us on YouTube at <b>@GlowAstro9</b>.
+        </p>
+
+        <a class="youtube-button"
+           href="https://www.youtube.com/@GlowAstro9"
+           target="_blank">
+            ▶ Visit Glow Astro on YouTube
+        </a>
+
+    </section>
+
+</main>
+
+<footer>
+    © 2026 Glow Astro. All rights reserved.
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
