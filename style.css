@@ -8,12 +8,7 @@ html {
 
 body {
     margin: 0;
-
-    font-family:
-        Georgia,
-        "Times New Roman",
-        serif;
-
+    font-family: Georgia, "Times New Roman", serif;
     color: #191919;
 
     background:
@@ -30,154 +25,135 @@ body {
 ========================= */
 
 .header {
-
-    min-height: 92px;
+    min-height: 82px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    padding: 12px 4%;
+    padding: 10px 4%;
 
     background: #fffdf7;
 
     border-bottom: 1px solid #ded2b8;
 
     position: sticky;
-
     top: 0;
-
     z-index: 100;
 }
 
 
 .logo-area {
-
     display: flex;
-
     align-items: center;
-
-    gap: 16px;
+    gap: 13px;
 }
 
 
 .logo-star {
-
-    width: 58px;
-
-    height: 58px;
+    width: 52px;
+    height: 52px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     border: 1px solid #b99a5c;
-
     border-radius: 50%;
 
     color: #a67c32;
-
-    font-size: 35px;
+    font-size: 31px;
 }
 
 
 .logo-text {
-
-    font-size: 34px;
-
+    font-size: 31px;
     line-height: 1;
-
     color: #1b1510;
 }
 
 
 .logo-subtitle {
+    margin-top: 5px;
 
-    margin-top: 6px;
-
-    font-size: 11px;
-
-    letter-spacing: 4px;
+    font-size: 9px;
+    letter-spacing: 3px;
 
     color: #33291e;
 }
 
 
+/* =========================
+   NAVIGATION
+========================= */
+
 .navigation {
-
     display: flex;
-
     align-items: center;
 
-    gap: 32px;
+    gap: 25px;
 }
 
 
 .navigation a {
-
     color: #24201c;
 
     text-decoration: none;
 
     font-family: Arial, sans-serif;
 
-    font-size: 16px;
+    font-size: 15px;
 }
 
 
 .navigation a:hover {
-
     color: #a17b3a;
 }
 
 
 .navigation .active {
-
     border-bottom: 3px solid #a17b3a;
-
-    padding-bottom: 8px;
+    padding-bottom: 7px;
 }
 
 
-.youtube-header {
+/* =========================
+   YOUTUBE HEADER
+========================= */
 
+.youtube-header {
     display: flex !important;
 
     align-items: center;
 
-    gap: 10px;
+    gap: 8px;
 
-    padding: 8px 15px;
+    padding: 6px 12px;
 
     border: 1px solid #8e826d;
 
-    border-radius: 10px;
+    border-radius: 9px;
+
+    font-size: 13px !important;
 }
 
 
 .youtube-icon {
-
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
-    width: 42px;
-
-    height: 29px;
+    width: 38px;
+    height: 27px;
 
     background: #ff0000;
 
     color: white;
 
-    border-radius: 7px;
+    border-radius: 6px;
 
-    font-size: 15px;
+    font-size: 13px;
 }
 
 
@@ -186,13 +162,10 @@ body {
 ========================= */
 
 .hero {
-
     min-height: 295px;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     position: relative;
@@ -211,15 +184,12 @@ body {
 
 
 .hero-content {
-
     text-align: center;
-
     z-index: 2;
 }
 
 
 .hero h1 {
-
     margin: 0;
 
     font-size: 70px;
@@ -231,7 +201,6 @@ body {
 
 
 .hero-subtitle {
-
     margin-top: 5px;
 
     letter-spacing: 7px;
@@ -241,11 +210,9 @@ body {
 
 
 .gold-line {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 18px;
@@ -259,9 +226,7 @@ body {
 
 
 .gold-line span {
-
     width: 130px;
-
     height: 1px;
 
     background: #bda36c;
@@ -269,7 +234,6 @@ body {
 
 
 .hero p {
-
     font-size: 19px;
 
     line-height: 1.6;
@@ -279,7 +243,6 @@ body {
 
 
 .hero-decoration {
-
     position: absolute;
 
     color: #bd9a53;
@@ -291,17 +254,13 @@ body {
 
 
 .hero-decoration.left {
-
     left: -30px;
-
     top: 30px;
 }
 
 
 .hero-decoration.right {
-
     right: 35px;
-
     top: 30px;
 
     font-size: 90px;
@@ -313,9 +272,7 @@ body {
 ========================= */
 
 main {
-
     width: 87%;
-
     max-width: 1120px;
 
     margin: 30px auto;
@@ -327,7 +284,6 @@ main {
 ========================= */
 
 .details-card {
-
     padding: 30px 40px;
 
     border: 1px solid #d7c8a9;
@@ -343,11 +299,9 @@ main {
 
 
 .section-title {
-
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     gap: 16px;
@@ -355,7 +309,6 @@ main {
 
 
 .section-title span {
-
     color: #b48b42;
 
     font-size: 34px;
@@ -363,7 +316,6 @@ main {
 
 
 .section-title h2 {
-
     margin: 0;
 
     font-size: 32px;
@@ -371,7 +323,6 @@ main {
 
 
 .section-description {
-
     text-align: center;
 
     font-family: Arial, sans-serif;
@@ -383,13 +334,11 @@ main {
 
 
 .form-group {
-
     margin-bottom: 22px;
 }
 
 
 .form-group label {
-
     display: block;
 
     margin-bottom: 8px;
@@ -401,7 +350,6 @@ main {
 
 
 .label-icon {
-
     display: inline-block;
 
     width: 28px;
@@ -412,7 +360,6 @@ main {
 
 input,
 select {
-
     width: 100%;
 
     height: 45px;
@@ -437,7 +384,6 @@ select {
 
 input:focus,
 select:focus {
-
     border-color: #b79558;
 
     box-shadow:
@@ -446,7 +392,6 @@ select:focus {
 
 
 .date-row {
-
     display: grid;
 
     grid-template-columns:
@@ -457,7 +402,6 @@ select:focus {
 
 
 .form-group small {
-
     display: block;
 
     margin-top: 5px;
@@ -469,7 +413,6 @@ select:focus {
 
 
 .place-row {
-
     display: grid;
 
     grid-template-columns:
@@ -480,7 +423,6 @@ select:focus {
 
 
 .save-button {
-
     width: 100%;
 
     height: 56px;
@@ -509,7 +451,6 @@ select:focus {
 
 
 .save-button:hover {
-
     transform: translateY(-1px);
 
     box-shadow:
@@ -518,7 +459,6 @@ select:focus {
 
 
 #message {
-
     min-height: 20px;
 
     text-align: center;
@@ -536,7 +476,6 @@ select:focus {
 ========================= */
 
 .about-card {
-
     display: grid;
 
     grid-template-columns: 280px 1fr;
@@ -558,46 +497,33 @@ select:focus {
 
 
 .about-image {
-
     display: flex;
 
     justify-content: center;
-
     align-items: center;
 }
 
 
-.portrait-circle {
+/* YOUR PHOTO */
 
+.about-photo {
     width: 210px;
-
     height: 210px;
 
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
+    object-fit: cover;
 
     border-radius: 50%;
 
     border: 5px solid #d1a94e;
 
-    background:
-        linear-gradient(
-            135deg,
-            #7e2c80,
-            #d5a2ce
-        );
+    display: block;
 
-    color: white;
-
-    font-size: 60px;
+    box-shadow:
+        0 4px 15px rgba(80, 50, 10, 0.2);
 }
 
 
 .about-content {
-
     border-left: 1px solid #cbbd9e;
 
     padding-left: 30px;
@@ -605,7 +531,6 @@ select:focus {
 
 
 .about-content h2 {
-
     margin-top: 0;
 
     font-size: 31px;
@@ -613,7 +538,6 @@ select:focus {
 
 
 .about-content p {
-
     font-family: Arial, sans-serif;
 
     line-height: 1.6;
@@ -625,7 +549,6 @@ select:focus {
 
 
 .about-youtube {
-
     display: inline-flex;
 
     align-items: center;
@@ -649,15 +572,12 @@ select:focus {
 
 
 .youtube-red {
-
     display: inline-flex;
 
     align-items: center;
-
     justify-content: center;
 
     width: 30px;
-
     height: 22px;
 
     background: #ff0000;
@@ -675,7 +595,6 @@ select:focus {
 ========================= */
 
 .simple-section {
-
     margin-top: 28px;
 
     padding: 35px;
@@ -691,13 +610,11 @@ select:focus {
 
 
 .simple-section h2 {
-
     font-size: 30px;
 }
 
 
 .simple-section p {
-
     font-family: Arial, sans-serif;
 
     color: #555;
@@ -707,7 +624,6 @@ select:focus {
 
 
 .simple-section a {
-
     color: #8e6827;
 
     font-weight: bold;
@@ -719,7 +635,6 @@ select:focus {
 ========================= */
 
 footer {
-
     margin-top: 40px;
 
     padding: 25px 6%;
@@ -740,7 +655,6 @@ footer {
 
 
 .footer-logo {
-
     display: flex;
 
     align-items: center;
@@ -750,7 +664,6 @@ footer {
 
 
 .footer-logo > span {
-
     font-size: 40px;
 
     color: #9e7939;
@@ -758,7 +671,6 @@ footer {
 
 
 .footer-logo strong {
-
     display: block;
 
     font-size: 24px;
@@ -766,7 +678,6 @@ footer {
 
 
 .footer-logo small {
-
     display: block;
 
     margin-top: 4px;
@@ -778,7 +689,6 @@ footer {
 
 
 .footer-links {
-
     display: flex;
 
     justify-content: center;
@@ -790,7 +700,6 @@ footer {
 
 
 .footer-links a {
-
     color: #292929;
 
     text-decoration: none;
@@ -798,7 +707,6 @@ footer {
 
 
 .footer-youtube {
-
     justify-self: end;
 
     color: #222;
@@ -812,7 +720,6 @@ footer {
 
 
 .footer-youtube span {
-
     color: #ff0000;
 
     margin-right: 7px;
@@ -820,7 +727,6 @@ footer {
 
 
 .copyright {
-
     grid-column: 1 / -1;
 
     padding-top: 15px;
@@ -838,58 +744,225 @@ footer {
 
 
 .copyright span {
-
     margin-left: 25px;
 }
 
 
-/* =========================
-   MOBILE
-========================= */
+/* ==================================================
+   PHONE VIEW
+   SMALLER HEADER
+================================================== */
 
 @media (max-width: 800px) {
 
     .header {
 
+        min-height: auto;
+
+        padding: 7px 10px;
+
+        display: flex;
+
         flex-direction: column;
 
-        gap: 18px;
+        gap: 7px;
+
     }
 
 
+    /* Smaller Glow Astro logo */
+
+    .logo-area {
+
+        gap: 8px;
+
+    }
+
+
+    .logo-star {
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 22px;
+
+    }
+
+
+    .logo-text {
+
+        font-size: 22px;
+
+    }
+
+
+    .logo-subtitle {
+
+        margin-top: 3px;
+
+        font-size: 6px;
+
+        letter-spacing: 2px;
+
+    }
+
+
+    /* Compact navigation */
+
     .navigation {
 
-        flex-wrap: wrap;
+        width: 100%;
+
+        display: flex;
+
+        align-items: center;
 
         justify-content: center;
 
-        gap: 15px;
+        gap: 10px;
+
+        flex-wrap: nowrap;
+
+    }
+
+
+    .navigation a {
+
+        font-size: 11px;
+
+        white-space: nowrap;
+
+    }
+
+
+    .navigation .active {
+
+        border-bottom-width: 2px;
+
+        padding-bottom: 3px;
+
+    }
+
+
+    /* Smaller YouTube button */
+
+    .youtube-header {
+
+        gap: 5px;
+
+        padding: 4px 7px;
+
+        border-radius: 6px;
+
+        font-size: 8px !important;
+
+        line-height: 1.1;
+
+    }
+
+
+    .youtube-icon {
+
+        width: 25px;
+
+        height: 18px;
+
+        border-radius: 4px;
+
+        font-size: 9px;
+
+    }
+
+
+    /* Smaller hero */
+
+    .hero {
+
+        min-height: 240px;
+
     }
 
 
     .hero h1 {
 
-        font-size: 48px;
+        font-size: 45px;
+
     }
 
 
     .hero-subtitle {
 
-        font-size: 14px;
+        font-size: 12px;
 
         letter-spacing: 4px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 15px;
+
+    }
+
+
+    .gold-line {
+
+        margin: 17px 0;
+
+        gap: 10px;
+
+    }
+
+
+    .gold-line span {
+
+        width: 70px;
+
+    }
+
+
+    .hero-decoration {
+
+        font-size: 90px;
+
+    }
+
+
+    .hero-decoration.right {
+
+        font-size: 60px;
+
+        right: 5px;
+
     }
 
 
     main {
 
         width: 94%;
+
     }
 
 
     .details-card {
 
         padding: 25px 18px;
+
+    }
+
+
+    .section-title h2 {
+
+        font-size: 25px;
+
+    }
+
+
+    .section-title span {
+
+        font-size: 25px;
+
     }
 
 
@@ -899,6 +972,7 @@ footer {
         grid-template-columns: 1fr;
 
         gap: 12px;
+
     }
 
 
@@ -907,6 +981,7 @@ footer {
         grid-template-columns: 1fr;
 
         text-align: center;
+
     }
 
 
@@ -919,6 +994,7 @@ footer {
         padding-left: 0;
 
         padding-top: 25px;
+
     }
 
 
@@ -927,6 +1003,7 @@ footer {
         grid-template-columns: 1fr;
 
         text-align: center;
+
     }
 
 
@@ -934,12 +1011,14 @@ footer {
     .footer-youtube {
 
         justify-self: center;
+
     }
 
 
     .footer-links {
 
         flex-wrap: wrap;
+
     }
 
 
@@ -948,6 +1027,88 @@ footer {
         display: block;
 
         margin: 8px 0 0;
+
+    }
+
+}
+
+
+/* ==================================================
+   VERY SMALL PHONES
+================================================== */
+
+@media (max-width: 400px) {
+
+    .header {
+
+        padding: 6px 7px;
+
+        gap: 5px;
+
+    }
+
+
+    .logo-star {
+
+        width: 32px;
+        height: 32px;
+
+        font-size: 18px;
+
+    }
+
+
+    .logo-text {
+
+        font-size: 19px;
+
+    }
+
+
+    .logo-subtitle {
+
+        font-size: 5px;
+
+        letter-spacing: 1.5px;
+
+    }
+
+
+    .navigation {
+
+        gap: 7px;
+
+    }
+
+
+    .navigation a {
+
+        font-size: 9px;
+
+    }
+
+
+    .youtube-header {
+
+        padding: 3px 5px;
+
+    }
+
+
+    .youtube-header strong {
+
+        font-size: 8px;
+
+    }
+
+
+    .youtube-icon {
+
+        width: 22px;
+        height: 16px;
+
+        font-size: 8px;
+
     }
 
 }
