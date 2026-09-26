@@ -4,10 +4,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <meta
-        name="viewport"
-        content="width=device-width, initial-scale=1.0"
-    >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Glow Astro</title>
 
@@ -20,29 +17,76 @@
 
     <div class="glow-card">
 
+        <!-- GLOW ASTRO HEADER -->
+
         <h1>✨ Glow Astro</h1>
 
         <p class="subtitle">
             Discover your cosmic journey
         </p>
 
-        <!-- YouTube -->
 
-        <a
-            href="https://www.youtube.com/@GlowAstro9"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="youtube-button"
-        >
-            ▶️ Visit Our YouTube Channel
-        </a>
+        <!-- YOUTUBE SECTION -->
+
+        <div class="youtube-section">
+
+            <div class="youtube-icon">
+                ▶
+            </div>
+
+            <h2>🌟 Glow Astro on YouTube</h2>
+
+            <p>
+                Welcome to Glow Astro — your destination for
+                astrology, zodiac signs, cosmic guidance and
+                fascinating insights about the universe.
+            </p>
+
+            <p>
+                Explore astrology content, discover your
+                cosmic personality and learn more about
+                the mysteries written in the stars.
+            </p>
+
+            <p class="youtube-message">
+                🎥 Watch our latest videos and join the
+                Glow Astro community!
+            </p>
+
+            <a
+                href="https://www.youtube.com/@GlowAstro9"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="youtube-button"
+            >
+                ▶️ Visit Glow Astro on YouTube
+            </a>
+
+            <p class="subscribe-text">
+                🔔 Subscribe to @GlowAstro9 for more astrology content!
+            </p>
+
+        </div>
 
 
-        <!-- FORM -->
+        <!-- VISITOR FORM -->
+
+        <h2 class="form-title">
+            🔮 Discover Your Cosmic Journey
+        </h2>
+
+        <p class="form-description">
+            Enter your birth details below to continue.
+        </p>
+
 
         <form id="astroForm">
 
-            <label for="name">Name</label>
+            <!-- NAME -->
+
+            <label for="name">
+                Name
+            </label>
 
             <input
                 type="text"
@@ -53,19 +97,38 @@
             >
 
 
-            <label for="gender">Gender</label>
+            <!-- GENDER -->
+
+            <label for="gender">
+                Gender
+            </label>
 
             <select
                 id="gender"
                 name="gender"
                 required
             >
-                <option value="">Select gender</option>
-                <option value="Male">Male</option>
-                <option value="Female">Female</option>
-                <option value="Other">Other</option>
+
+                <option value="">
+                    Select gender
+                </option>
+
+                <option value="Male">
+                    Male
+                </option>
+
+                <option value="Female">
+                    Female
+                </option>
+
+                <option value="Other">
+                    Other
+                </option>
+
             </select>
 
+
+            <!-- DATE -->
 
             <label for="date_of_birth">
                 Date of Birth
@@ -79,6 +142,8 @@
             >
 
 
+            <!-- TIME -->
+
             <label for="time_of_birth">
                 Time of Birth
             </label>
@@ -91,6 +156,8 @@
             >
 
 
+            <!-- COUNTRY -->
+
             <label for="country">
                 Country
             </label>
@@ -100,11 +167,15 @@
                 name="country"
                 required
             >
+
                 <option value="">
                     Loading countries...
                 </option>
+
             </select>
 
+
+            <!-- STATE -->
 
             <label for="state">
                 State / Province / Region
@@ -115,11 +186,15 @@
                 name="state"
                 required
             >
+
                 <option value="">
                     Select state / province / region
                 </option>
+
             </select>
 
+
+            <!-- CITY -->
 
             <label for="city">
                 City
@@ -134,13 +209,34 @@
             >
 
 
-            <button type="submit">
+            <!-- SUBMIT -->
+
+            <button
+                type="submit"
+                class="submit-button"
+            >
                 ✨ Submit Details
             </button>
+
 
             <p id="message"></p>
 
         </form>
+
+
+        <!-- FOOTER -->
+
+        <div class="footer">
+
+            <p>
+                ✨ Glow Astro
+            </p>
+
+            <p>
+                Explore the stars. Discover yourself.
+            </p>
+
+        </div>
 
     </div>
 
