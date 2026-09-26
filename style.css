@@ -1,125 +1,716 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+
+    font-family:
+        Georgia,
+        "Times New Roman",
+        serif;
+
+    color: #191919;
+
+    background:
+        linear-gradient(
+            180deg,
+            #fffdf6,
+            #f7f0df
+        );
+}
+
+
 /* =========================
-   YOUTUBE SECTION
+   HEADER
 ========================= */
 
-.youtube-section {
-    margin: 25px 0;
-    padding: 22px;
+.header {
 
-    border-radius: 18px;
-
-    background: rgba(255, 255, 255, 0.06);
-
-    border: 1px solid rgba(255, 217, 90, 0.35);
-
-    text-align: center;
-
-    box-shadow:
-        0 0 20px rgba(255, 217, 90, 0.12);
-}
-
-.youtube-icon {
-    width: 58px;
-    height: 40px;
-
-    margin: 0 auto 12px;
+    min-height: 92px;
 
     display: flex;
+
     align-items: center;
+
+    justify-content: space-between;
+
+    padding: 12px 4%;
+
+    background: #fffdf7;
+
+    border-bottom: 1px solid #ded2b8;
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 100;
+}
+
+
+.logo-area {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 16px;
+}
+
+
+.logo-star {
+
+    width: 58px;
+
+    height: 58px;
+
+    display: flex;
+
+    align-items: center;
+
     justify-content: center;
 
-    background: #ff0000;
+    border: 1px solid #b99a5c;
 
-    border-radius: 12px;
+    border-radius: 50%;
 
-    color: white;
+    color: #a67c32;
 
-    font-size: 23px;
-
-    box-shadow:
-        0 0 18px rgba(255, 0, 0, 0.35);
+    font-size: 35px;
 }
 
-.youtube-section h2 {
-    margin: 8px 0 12px;
 
-    color: #ffd95a;
+.logo-text {
 
-    font-size: 21px;
+    font-size: 34px;
+
+    line-height: 1;
+
+    color: #1b1510;
 }
 
-.youtube-section p {
-    color: #ddd0ff;
 
-    line-height: 1.6;
+.logo-subtitle {
 
-    font-size: 14px;
+    margin-top: 6px;
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    color: #33291e;
 }
 
-.youtube-message {
-    color: #f8df91 !important;
 
-    font-weight: bold;
+.navigation {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 32px;
 }
 
-.youtube-button {
-    display: block;
 
-    width: 100%;
+.navigation a {
 
-    margin-top: 18px;
-
-    padding: 13px;
-
-    border-radius: 12px;
-
-    background: #ff0000;
-
-    color: white;
+    color: #24201c;
 
     text-decoration: none;
 
+    font-family: Arial, sans-serif;
+
+    font-size: 16px;
+}
+
+
+.navigation a:hover {
+
+    color: #a17b3a;
+}
+
+
+.navigation .active {
+
+    border-bottom: 3px solid #a17b3a;
+
+    padding-bottom: 8px;
+}
+
+
+.youtube-header {
+
+    display: flex !important;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 8px 15px;
+
+    border: 1px solid #8e826d;
+
+    border-radius: 10px;
+}
+
+
+.youtube-icon {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+
+    height: 29px;
+
+    background: #ff0000;
+
+    color: white;
+
+    border-radius: 7px;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+
+    min-height: 295px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #fffdf5,
+            #f4ead4
+        );
+
+    border-bottom: 1px solid #dfd1b3;
+}
+
+
+.hero-content {
+
+    text-align: center;
+
+    z-index: 2;
+}
+
+
+.hero h1 {
+
+    margin: 0;
+
+    font-size: 70px;
+
+    font-weight: 500;
+
+    color: #160f0a;
+}
+
+
+.hero-subtitle {
+
+    margin-top: 5px;
+
+    letter-spacing: 7px;
+
+    font-size: 19px;
+}
+
+
+.gold-line {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 18px;
+
+    margin: 25px 0;
+
+    color: #ae8a43;
+
+    font-size: 25px;
+}
+
+
+.gold-line span {
+
+    width: 130px;
+
+    height: 1px;
+
+    background: #bda36c;
+}
+
+
+.hero p {
+
+    font-size: 19px;
+
+    line-height: 1.6;
+
+    color: #39352f;
+}
+
+
+.hero-decoration {
+
+    position: absolute;
+
+    color: #bd9a53;
+
+    opacity: 0.6;
+
+    font-size: 160px;
+}
+
+
+.hero-decoration.left {
+
+    left: -30px;
+
+    top: 30px;
+}
+
+
+.hero-decoration.right {
+
+    right: 35px;
+
+    top: 30px;
+
+    font-size: 90px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+main {
+
+    width: 87%;
+
+    max-width: 1120px;
+
+    margin: 30px auto;
+}
+
+
+/* =========================
+   DETAILS CARD
+========================= */
+
+.details-card {
+
+    padding: 30px 40px;
+
+    border: 1px solid #d7c8a9;
+
+    border-radius: 12px;
+
+    background:
+        rgba(255, 253, 246, 0.95);
+
+    box-shadow:
+        0 2px 8px rgba(91, 67, 28, 0.05);
+}
+
+
+.section-title {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 16px;
+}
+
+
+.section-title span {
+
+    color: #b48b42;
+
+    font-size: 34px;
+}
+
+
+.section-title h2 {
+
+    margin: 0;
+
+    font-size: 32px;
+}
+
+
+.section-description {
+
+    text-align: center;
+
+    font-family: Arial, sans-serif;
+
+    color: #60636a;
+
+    margin-bottom: 25px;
+}
+
+
+.form-group {
+
+    margin-bottom: 22px;
+}
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-size: 18px;
+
     font-weight: bold;
+}
+
+
+.label-icon {
+
+    display: inline-block;
+
+    width: 28px;
+
+    font-size: 22px;
+}
+
+
+input,
+select {
+
+    width: 100%;
+
+    height: 45px;
+
+    padding: 0 18px;
+
+    border: 1px solid #c8c8c8;
+
+    border-radius: 9px;
+
+    background: #fff;
+
+    color: #303030;
 
     font-size: 16px;
 
+    font-family: Arial, sans-serif;
+
+    outline: none;
+}
+
+
+input:focus,
+select:focus {
+
+    border-color: #b79558;
+
     box-shadow:
-        0 0 18px rgba(255, 0, 0, 0.3);
+        0 0 0 2px rgba(183, 149, 88, 0.12);
+}
+
+
+.date-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+.form-group small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    color: #777;
+
+    font-family: Arial, sans-serif;
+}
+
+
+.place-row {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1.1fr;
+
+    gap: 18px;
+}
+
+
+.save-button {
+
+    width: 100%;
+
+    height: 56px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #e6bf78,
+            #e9c681
+        );
+
+    color: #17120c;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+    cursor: pointer;
 
     transition: 0.2s;
 }
 
-.youtube-button:hover {
+
+.save-button:hover {
+
     transform: translateY(-1px);
 
-    opacity: 0.9;
+    box-shadow:
+        0 5px 15px rgba(132, 94, 35, 0.15);
 }
 
-.subscribe-text {
-    margin-bottom: 0;
 
-    color: #ffd95a !important;
+#message {
+
+    min-height: 20px;
+
+    text-align: center;
+
+    margin: 15px 0 0;
+
+    font-family: Arial, sans-serif;
 
     font-weight: bold;
 }
 
 
 /* =========================
-   FORM TITLE
+   ABOUT
 ========================= */
 
-.form-title {
-    text-align: center;
+.about-card {
 
-    color: #ffd95a;
+    display: grid;
 
-    margin-top: 30px;
+    grid-template-columns: 280px 1fr;
+
+    gap: 35px;
+
+    align-items: center;
+
+    margin-top: 28px;
+
+    padding: 30px;
+
+    border: 1px solid #d7c8a9;
+
+    border-radius: 12px;
+
+    background: #fffdf6;
 }
 
-.form-description {
+
+.about-image {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+
+.portrait-circle {
+
+    width: 210px;
+
+    height: 210px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 5px solid #d1a94e;
+
+    background:
+        linear-gradient(
+            135deg,
+            #7e2c80,
+            #d5a2ce
+        );
+
+    color: white;
+
+    font-size: 60px;
+}
+
+
+.about-content {
+
+    border-left: 1px solid #cbbd9e;
+
+    padding-left: 30px;
+}
+
+
+.about-content h2 {
+
+    margin-top: 0;
+
+    font-size: 31px;
+}
+
+
+.about-content p {
+
+    font-family: Arial, sans-serif;
+
+    line-height: 1.6;
+
+    color: #343434;
+
+    font-size: 15px;
+}
+
+
+.about-youtube {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 10px 16px;
+
+    border: 1px solid #8f805f;
+
+    border-radius: 8px;
+
+    color: #161616;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+}
+
+
+.youtube-red {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 30px;
+
+    height: 22px;
+
+    background: #ff0000;
+
+    border-radius: 5px;
+
+    color: white;
+
+    font-size: 12px;
+}
+
+
+/* =========================
+   SERVICES / CONTACT
+========================= */
+
+.simple-section {
+
+    margin-top: 28px;
+
+    padding: 35px;
+
     text-align: center;
 
-    color: #ddd0ff;
+    border: 1px solid #d7c8a9;
+
+    border-radius: 12px;
+
+    background: #fffdf6;
+}
+
+
+.simple-section h2 {
+
+    font-size: 30px;
+}
+
+
+.simple-section p {
+
+    font-family: Arial, sans-serif;
+
+    color: #555;
+
+    line-height: 1.6;
+}
+
+
+.simple-section a {
+
+    color: #8e6827;
+
+    font-weight: bold;
 }
 
 
@@ -127,16 +718,236 @@
    FOOTER
 ========================= */
 
-.footer {
-    margin-top: 30px;
+footer {
 
-    padding-top: 18px;
+    margin-top: 40px;
 
-    border-top: 1px solid rgba(255, 217, 90, 0.2);
+    padding: 25px 6%;
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr 1fr;
+
+    align-items: center;
+
+    gap: 20px;
+
+    border-top: 1px solid #d6c8aa;
+
+    background: #fffdf6;
+}
+
+
+.footer-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.footer-logo > span {
+
+    font-size: 40px;
+
+    color: #9e7939;
+}
+
+
+.footer-logo strong {
+
+    display: block;
+
+    font-size: 24px;
+}
+
+
+.footer-logo small {
+
+    display: block;
+
+    margin-top: 4px;
+
+    letter-spacing: 3px;
+
+    font-size: 9px;
+}
+
+
+.footer-links {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+
+    font-family: Arial, sans-serif;
+}
+
+
+.footer-links a {
+
+    color: #292929;
+
+    text-decoration: none;
+}
+
+
+.footer-youtube {
+
+    justify-self: end;
+
+    color: #222;
+
+    text-decoration: none;
+
+    font-family: Arial, sans-serif;
+
+    font-weight: bold;
+}
+
+
+.footer-youtube span {
+
+    color: #ff0000;
+
+    margin-right: 7px;
+}
+
+
+.copyright {
+
+    grid-column: 1 / -1;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #e2d8c5;
 
     text-align: center;
 
-    color: #bcaee0;
+    color: #777;
+
+    font-family: Arial, sans-serif;
 
     font-size: 13px;
+}
+
+
+.copyright span {
+
+    margin-left: 25px;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 800px) {
+
+    .header {
+
+        flex-direction: column;
+
+        gap: 18px;
+    }
+
+
+    .navigation {
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+
+        gap: 15px;
+    }
+
+
+    .hero h1 {
+
+        font-size: 48px;
+    }
+
+
+    .hero-subtitle {
+
+        font-size: 14px;
+
+        letter-spacing: 4px;
+    }
+
+
+    main {
+
+        width: 94%;
+    }
+
+
+    .details-card {
+
+        padding: 25px 18px;
+    }
+
+
+    .date-row,
+    .place-row {
+
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .about-card {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .about-content {
+
+        border-left: none;
+
+        border-top: 1px solid #cbbd9e;
+
+        padding-left: 0;
+
+        padding-top: 25px;
+    }
+
+
+    footer {
+
+        grid-template-columns: 1fr;
+
+        text-align: center;
+    }
+
+
+    .footer-logo,
+    .footer-youtube {
+
+        justify-self: center;
+    }
+
+
+    .footer-links {
+
+        flex-wrap: wrap;
+    }
+
+
+    .copyright span {
+
+        display: block;
+
+        margin: 8px 0 0;
+    }
+
 }
