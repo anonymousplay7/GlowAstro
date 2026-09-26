@@ -1,202 +1,393 @@
 const form = document.getElementById("astroForm");
+
 const message = document.getElementById("message");
 
-const countrySelect = document.getElementById("country");
-const stateSelect = document.getElementById("state");
+const countrySelect =
+    document.getElementById("country");
+
+const stateSelect =
+    document.getElementById("state");
+
+const daySelect =
+    document.getElementById("birth_day");
+
+const monthSelect =
+    document.getElementById("birth_month");
+
+const yearSelect =
+    document.getElementById("birth_year");
 
 
-// ================================
-// LOAD COUNTRIES
-// ================================
+// ==========================================
+// CREATE DAYS 1 - 31
+// ==========================================
 
-fetch("https://countriesnow.space/api/v0.1/countries/states")
-    .then(response => response.json())
-    .then(data => {
+for (let day = 1; day <= 31; day++) {
 
-        if (data.error) {
-            throw new Error("Unable to load countries");
-        }
+    const option =
+        document.createElement("option");
 
-        data.data.forEach(country => {
+    option.value =
+        String(day).padStart(2, "0");
 
-            const option = document.createElement("option");
+    option.textContent = day;
 
-            option.value = country.name;
-            option.textContent = country.name;
-
-            countrySelect.appendChild(option);
-        });
-
-    })
-    .catch(error => {
-
-        console.error("Country loading error:", error);
-
-        countrySelect.innerHTML =
-            '<option value="">Unable to load countries</option>';
-
-    });
+    daySelect.appendChild(option);
+}
 
 
-// ================================
-// LOAD STATES
-// ================================
+// ==========================================
+// CREATE YEARS
+// ==========================================
 
-countrySelect.addEventListener("change", function () {
+const currentYear =
+    new Date().getFullYear();
 
-    const selectedCountry = countrySelect.value;
+for (
+    let year = currentYear;
+    year >= 1900;
+    year--
+) {
 
-    stateSelect.innerHTML =
-        '<option value="">Loading states...</option>';
+    const option =
+        document.createElement("option");
 
-    if (!selectedCountry) {
+    option.value = year;
 
-        stateSelect.innerHTML =
-            '<option value="">Select state / province / region</option>';
+    option.textContent = year;
 
-        return;
+    yearSelect.appendChild(option);
+}
+
+
+// ==========================================
+// LOAD ALL COUNTRIES
+// ==========================================
+
+fetch(
+    "https://countriesnow.space/api/v0.1/countries/states"
+)
+
+.then(response => response.json())
+
+.then(data => {
+
+    if (data.error) {
+
+        throw new Error(
+            "Unable to load countries"
+        );
     }
 
-    fetch("https://countriesnow.space/api/v0.1/countries/states", {
 
-        method: "POST",
+    data.data.forEach(country => {
 
-        headers: {
-            "Content-Type": "application/json"
-        },
+        const option =
+            document.createElement("option");
 
-        body: JSON.stringify({
-            country: selectedCountry
-        })
+        option.value =
+            country.name;
 
-    })
-    .then(response => response.json())
-    .then(data => {
+        option.textContent =
+            country.name;
 
-        stateSelect.innerHTML =
-            '<option value="">Select state / province / region</option>';
-
-        if (
-            data.error ||
-            !data.data ||
-            !data.data.states
-        ) {
-            return;
-        }
-
-        data.data.states.forEach(state => {
-
-            const option = document.createElement("option");
-
-            option.value = state.name;
-            option.textContent = state.name;
-
-            stateSelect.appendChild(option);
-
-        });
-
-    })
-    .catch(error => {
-
-        console.error("State loading error:", error);
-
-        stateSelect.innerHTML =
-            '<option value="">Unable to load states</option>';
+        countrySelect.appendChild(option);
 
     });
+
+})
+
+.catch(error => {
+
+    console.error(
+        "Country loading error:",
+        error
+    );
+
+    countrySelect.innerHTML =
+        '<option value="">Unable to load countries</option>';
 
 });
 
 
-// ================================
-// SUBMIT FORM
-// ================================
+// ==========================================
+// LOAD STATES
+// ==========================================
 
-form.addEventListener("submit", async function (event) {
+countrySelect.addEventListener(
+    "change",
+    function () {
 
-    event.preventDefault();
-
-    message.textContent = "Submitting...";
-    message.style.color = "#ffd95a";
-
-
-    const visitorData = {
-
-        name:
-            document.getElementById("name").value.trim(),
-
-        gender:
-            document.getElementById("gender").value,
-
-        date_of_birth:
-            document.getElementById("date_of_birth").value,
-
-        time_of_birth:
-            document.getElementById("time_of_birth").value,
-
-        country:
-            document.getElementById("country").value.trim(),
-
-        state:
-            document.getElementById("state").value.trim(),
-
-        city:
-            document.getElementById("city").value.trim()
-
-    };
+        const selectedCountry =
+            countrySelect.value;
 
 
-    try {
+        stateSelect.innerHTML =
+            '<option value="">Loading states...</option>';
 
-        const response = await fetch(
-            "https://glowastroadmin.onrender.com/api/visitors",
+
+        if (!selectedCountry) {
+
+            stateSelect.innerHTML =
+                '<option value="">Select State</option>';
+
+            return;
+        }
+
+
+        fetch(
+            "https://countriesnow.space/api/v0.1/countries/states",
             {
 
                 method: "POST",
 
                 headers: {
-                    "Content-Type": "application/json"
+                    "Content-Type":
+                        "application/json"
                 },
 
-                body: JSON.stringify(visitorData)
+                body: JSON.stringify({
+                    country:
+                        selectedCountry
+                })
 
             }
-        );
+        )
 
+        .then(response =>
+            response.json()
+        )
 
-        const result = await response.json();
-
-
-        if (response.ok && result.success) {
-
-            message.textContent =
-                "✨ Your details were submitted successfully!";
-
-            message.style.color = "#7CFF9B";
-
-            form.reset();
+        .then(data => {
 
             stateSelect.innerHTML =
-                '<option value="">Select state / province / region</option>';
+                '<option value="">Select State</option>';
 
-        } else {
 
-            message.textContent =
-                result.message || "Something went wrong.";
+            if (
+                data.error ||
+                !data.data ||
+                !data.data.states
+            ) {
 
-            message.style.color = "#ff7777";
+                return;
+            }
+
+
+            data.data.states.forEach(
+                state => {
+
+                    const option =
+                        document.createElement(
+                            "option"
+                        );
+
+                    option.value =
+                        state.name;
+
+                    option.textContent =
+                        state.name;
+
+                    stateSelect.appendChild(
+                        option
+                    );
+
+                }
+            );
+
+        })
+
+        .catch(error => {
+
+            console.error(
+                "State loading error:",
+                error
+            );
+
+            stateSelect.innerHTML =
+                '<option value="">Unable to load states</option>';
+
+        });
+
+    }
+);
+
+
+// ==========================================
+// SUBMIT FORM
+// ==========================================
+
+form.addEventListener(
+    "submit",
+    async function (event) {
+
+        event.preventDefault();
+
+
+        message.textContent =
+            "Saving your details...";
+
+        message.style.color =
+            "#9a762d";
+
+
+        // ==================================
+        // BUILD DATE OF BIRTH
+        // ==================================
+
+        const day =
+            daySelect.value;
+
+        const month =
+            monthSelect.value;
+
+        const year =
+            yearSelect.value;
+
+
+        const dateOfBirth =
+            `${year}-${month}-${day}`;
+
+
+        // ==================================
+        // COLLECT DATA
+        // ==================================
+
+        const visitorData = {
+
+            name:
+                document
+                    .getElementById("name")
+                    .value
+                    .trim(),
+
+            gender:
+                document
+                    .getElementById("gender")
+                    .value,
+
+            date_of_birth:
+                dateOfBirth,
+
+            time_of_birth:
+                document
+                    .getElementById(
+                        "time_of_birth"
+                    )
+                    .value,
+
+            country:
+                countrySelect
+                    .value
+                    .trim(),
+
+            state:
+                stateSelect
+                    .value
+                    .trim(),
+
+            city:
+                document
+                    .getElementById("city")
+                    .value
+                    .trim()
+
+        };
+
+
+        // ==================================
+        // SEND TO ADMIN DATABASE
+        // ==================================
+
+        try {
+
+            const response =
+                await fetch(
+                    "https://glowastroadmin.onrender.com/api/visitors",
+                    {
+
+                        method: "POST",
+
+                        headers: {
+                            "Content-Type":
+                                "application/json"
+                        },
+
+                        body:
+                            JSON.stringify(
+                                visitorData
+                            )
+
+                    }
+                );
+
+
+            const result =
+                await response.json();
+
+
+            // ==============================
+            // SUCCESS
+            // ==============================
+
+            if (
+                response.ok &&
+                result.success
+            ) {
+
+                message.textContent =
+                    "✨ Your details were saved successfully!";
+
+                message.style.color =
+                    "#278044";
+
+
+                form.reset();
+
+
+                stateSelect.innerHTML =
+                    '<option value="">Select State</option>';
+
+            }
+
+
+            // ==============================
+            // SERVER ERROR
+            // ==============================
+
+            else {
+
+                message.textContent =
+                    result.message ||
+                    "Something went wrong.";
+
+                message.style.color =
+                    "#c62828";
+
+            }
 
         }
 
-    } catch (error) {
 
-        console.error("Submission error:", error);
+        // ==================================
+        // CONNECTION ERROR
+        // ==================================
 
-        message.textContent =
-            "Unable to connect to Glow Astro. Please try again.";
+        catch (error) {
 
-        message.style.color = "#ff7777";
+            console.error(
+                "Submission error:",
+                error
+            );
+
+
+            message.textContent =
+                "Unable to connect to Glow Astro. Please try again.";
+
+            message.style.color =
+                "#c62828";
+
+        }
 
     }
-
-});
+);
