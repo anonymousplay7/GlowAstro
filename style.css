@@ -1,156 +1,142 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+/* =========================
+   YOUTUBE SECTION
+========================= */
 
-body {
-    font-family: Georgia, serif;
-    background: linear-gradient(135deg, #fff8e7, #f7e4b5);
-    color: #4b3215;
-    min-height: 100vh;
-}
+.youtube-section {
+    margin: 25px 0;
+    padding: 22px;
 
-header {
+    border-radius: 18px;
+
+    background: rgba(255, 255, 255, 0.06);
+
+    border: 1px solid rgba(255, 217, 90, 0.35);
+
     text-align: center;
-    padding: 35px 20px 20px;
+
+    box-shadow:
+        0 0 20px rgba(255, 217, 90, 0.12);
 }
 
-.logo {
-    font-size: 42px;
-    font-weight: bold;
-    color: #b8860b;
-}
+.youtube-icon {
+    width: 58px;
+    height: 40px;
 
-.subtitle {
-    margin-top: 8px;
-    font-size: 18px;
-    color: #76521d;
-}
+    margin: 0 auto 12px;
 
-.container {
-    width: 92%;
-    max-width: 800px;
-    margin: 20px auto 50px;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.card,
-.about-card {
-    background: rgba(255, 255, 255, 0.94);
-    border: 1px solid #d8b45a;
-    border-radius: 20px;
-    padding: 30px;
-    box-shadow: 0 8px 25px rgba(100, 70, 20, 0.15);
-}
+    background: #ff0000;
 
-.about-card {
-    margin-top: 30px;
-    text-align: center;
-}
-
-h2 {
-    color: #a87508;
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-top: 16px;
-    margin-bottom: 7px;
-    font-weight: bold;
-}
-
-input,
-select {
-    width: 100%;
-    padding: 13px;
-    border: 1px solid #c9a44d;
-    border-radius: 10px;
-    background: #fffdf6;
-    font-size: 16px;
-    color: #4b3215;
-}
-
-input:focus,
-select:focus {
-    outline: 2px solid #d4af37;
-}
-
-button {
-    width: 100%;
-    margin-top: 25px;
-    padding: 15px;
-    border: none;
     border-radius: 12px;
-    background: linear-gradient(135deg, #d4af37, #b8860b);
+
     color: white;
-    font-size: 17px;
-    font-weight: bold;
-    cursor: pointer;
+
+    font-size: 23px;
+
+    box-shadow:
+        0 0 18px rgba(255, 0, 0, 0.35);
 }
 
-button:hover {
-    opacity: 0.9;
+.youtube-section h2 {
+    margin: 8px 0 12px;
+
+    color: #ffd95a;
+
+    font-size: 21px;
 }
 
-.success-message {
-    display: none;
-    margin-top: 20px;
-    padding: 15px;
-    border-radius: 12px;
-    background: #e8f5e9;
-    border: 1px solid #4caf50;
-    color: #2e7d32;
-    text-align: center;
-    font-weight: bold;
-}
+.youtube-section p {
+    color: #ddd0ff;
 
-.notice {
-    margin-top: 15px;
-    font-size: 13px;
-    color: #76521d;
-    text-align: center;
-}
-
-.channel-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 50%;
-    border: 4px solid #d4af37;
-    margin-bottom: 20px;
-}
-
-.about-card p {
-    margin: 12px 0;
     line-height: 1.6;
-}
 
-.youtube-button {
-    display: inline-block;
-    margin-top: 18px;
-    padding: 13px 20px;
-    background: #c62828;
-    color: white;
-    text-decoration: none;
-    border-radius: 10px;
-    font-weight: bold;
-}
-
-footer {
-    text-align: center;
-    padding: 25px;
-    color: #76521d;
     font-size: 14px;
 }
 
-@media (max-width: 600px) {
-    .logo {
-        font-size: 34px;
-    }
+.youtube-message {
+    color: #f8df91 !important;
 
-    .card,
-    .about-card {
-        padding: 22px;
-    }
+    font-weight: bold;
+}
+
+.youtube-button {
+    display: block;
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border-radius: 12px;
+
+    background: #ff0000;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    box-shadow:
+        0 0 18px rgba(255, 0, 0, 0.3);
+
+    transition: 0.2s;
+}
+
+.youtube-button:hover {
+    transform: translateY(-1px);
+
+    opacity: 0.9;
+}
+
+.subscribe-text {
+    margin-bottom: 0;
+
+    color: #ffd95a !important;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   FORM TITLE
+========================= */
+
+.form-title {
+    text-align: center;
+
+    color: #ffd95a;
+
+    margin-top: 30px;
+}
+
+.form-description {
+    text-align: center;
+
+    color: #ddd0ff;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    margin-top: 30px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 217, 90, 0.2);
+
+    text-align: center;
+
+    color: #bcaee0;
+
+    font-size: 13px;
 }
