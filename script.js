@@ -1,241 +1,202 @@
-* {
-    box-sizing: border-box;
-}
+const form = document.getElementById("astroForm");
+const message = document.getElementById("message");
 
-body {
-    margin: 0;
-    min-height: 100vh;
+const countrySelect = document.getElementById("country");
+const stateSelect = document.getElementById("state");
 
-    font-family: Georgia, serif;
 
-    background:
-        radial-gradient(
-            circle at top,
-            #fff4b8,
-            transparent 35%
-        ),
-        linear-gradient(
-            135deg,
-            #160b2e,
-            #35145c,
-            #090414
-        );
+// ================================
+// LOAD COUNTRIES
+// ================================
 
-    color: white;
-}
+fetch("https://countriesnow.space/api/v0.1/countries/states")
+    .then(response => response.json())
+    .then(data => {
 
+        if (data.error) {
+            throw new Error("Unable to load countries");
+        }
 
-.container {
-    min-height: 100vh;
+        data.data.forEach(country => {
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+            const option = document.createElement("option");
 
-    padding: 25px;
-}
+            option.value = country.name;
+            option.textContent = country.name;
 
+            countrySelect.appendChild(option);
+        });
 
-.glow-card {
-    width: 100%;
-    max-width: 480px;
+    })
+    .catch(error => {
 
-    padding: 32px;
+        console.error("Country loading error:", error);
 
-    border-radius: 25px;
+        countrySelect.innerHTML =
+            '<option value="">Unable to load countries</option>';
 
-    background: rgba(20, 10, 40, 0.88);
+    });
 
-    border: 1px solid rgba(255, 215, 100, 0.6);
 
-    box-shadow:
-        0 0 25px rgba(255, 215, 100, 0.35),
-        0 0 60px rgba(170, 90, 255, 0.25);
-}
+// ================================
+// LOAD STATES
+// ================================
 
+countrySelect.addEventListener("change", function () {
 
-h1 {
-    text-align: center;
+    const selectedCountry = countrySelect.value;
 
-    margin: 0;
+    stateSelect.innerHTML =
+        '<option value="">Loading states...</option>';
 
-    color: #ffd95a;
+    if (!selectedCountry) {
 
-    text-shadow:
-        0 0 15px rgba(255, 217, 90, 0.8);
-}
+        stateSelect.innerHTML =
+            '<option value="">Select state / province / region</option>';
 
-
-.subtitle {
-    text-align: center;
-
-    color: #ddd0ff;
-
-    margin-bottom: 25px;
-}
-
-
-/* =========================
-   YOUTUBE BUTTON
-========================= */
-
-.youtube-button {
-    display: block;
-
-    width: 100%;
-
-    margin: 15px 0 25px;
-
-    padding: 13px;
-
-    border-radius: 12px;
-
-    background: #ff0000;
-
-    color: white;
-
-    text-align: center;
-
-    text-decoration: none;
-
-    font-weight: bold;
-
-    font-size: 16px;
-
-    box-shadow:
-        0 0 15px rgba(255, 0, 0, 0.3);
-
-    transition: 0.2s;
-}
-
-
-.youtube-button:hover {
-    opacity: 0.9;
-
-    transform: translateY(-1px);
-}
-
-
-/* =========================
-   FORM
-========================= */
-
-label {
-    display: block;
-
-    margin-top: 15px;
-
-    margin-bottom: 7px;
-
-    color: #f8df91;
-
-    font-weight: bold;
-}
-
-
-input,
-select {
-    width: 100%;
-
-    padding: 13px;
-
-    border: 1px solid #8c6bc4;
-
-    border-radius: 10px;
-
-    background: #170d2c;
-
-    color: white;
-
-    font-size: 15px;
-
-    outline: none;
-}
-
-
-input:focus,
-select:focus {
-    border-color: #ffd95a;
-
-    box-shadow:
-        0 0 10px rgba(255, 217, 90, 0.35);
-}
-
-
-/* =========================
-   SUBMIT BUTTON
-========================= */
-
-button[type="submit"] {
-    width: 100%;
-
-    margin-top: 25px;
-
-    padding: 14px;
-
-    border: none;
-
-    border-radius: 12px;
-
-    background:
-        linear-gradient(
-            135deg,
-            #ffd95a,
-            #c98bff
-        );
-
-    color: #1a0c2e;
-
-    font-size: 17px;
-
-    font-weight: bold;
-
-    cursor: pointer;
-
-    box-shadow:
-        0 0 20px rgba(255, 217, 90, 0.35);
-
-    transition: 0.2s;
-}
-
-
-button[type="submit"]:hover {
-    transform: translateY(-1px);
-}
-
-
-/* =========================
-   MESSAGE
-========================= */
-
-#message {
-    text-align: center;
-
-    margin-top: 18px;
-
-    font-weight: bold;
-
-    min-height: 20px;
-}
-
-
-/* =========================
-   MOBILE
-========================= */
-
-@media (max-width: 500px) {
-
-    .container {
-        padding: 15px;
+        return;
     }
 
-    .glow-card {
-        padding: 24px;
-        border-radius: 20px;
-    }
+    fetch("https://countriesnow.space/api/v0.1/countries/states", {
 
-    h1 {
-        font-size: 28px;
-    }
+        method: "POST",
+
+        headers: {
+            "Content-Type": "application/json"
+        },
+
+        body: JSON.stringify({
+            country: selectedCountry
+        })
+
+    })
+    .then(response => response.json())
+    .then(data => {
+
+        stateSelect.innerHTML =
+            '<option value="">Select state / province / region</option>';
+
+        if (
+            data.error ||
+            !data.data ||
+            !data.data.states
+        ) {
+            return;
+        }
+
+        data.data.states.forEach(state => {
+
+            const option = document.createElement("option");
+
+            option.value = state.name;
+            option.textContent = state.name;
+
+            stateSelect.appendChild(option);
+
+        });
+
+    })
+    .catch(error => {
+
+        console.error("State loading error:", error);
+
+        stateSelect.innerHTML =
+            '<option value="">Unable to load states</option>';
+
+    });
+
+});
+
+
+// ================================
+// SUBMIT FORM
+// ================================
+
+form.addEventListener("submit", async function (event) {
+
+    event.preventDefault();
+
+    message.textContent = "Submitting...";
+    message.style.color = "#ffd95a";
+
+
+    const visitorData = {
+
+        name:
+            document.getElementById("name").value.trim(),
+
+        gender:
+            document.getElementById("gender").value,
+
+        date_of_birth:
+            document.getElementById("date_of_birth").value,
+
+        time_of_birth:
+            document.getElementById("time_of_birth").value,
+
+        country:
+            document.getElementById("country").value.trim(),
+
+        state:
+            document.getElementById("state").value.trim(),
+
+        city:
+            document.getElementById("city").value.trim()
+
+    };
+
+
+    try {
+
+        const response = await fetch(
+            "https://glowastroadmin.onrender.com/api/visitors",
+            {
+
+                method: "POST",
+
+                headers: {
+                    "Content-Type": "application/json"
+                },
+
+                body: JSON.stringify(visitorData)
 
             }
+        );
+
+
+        const result = await response.json();
+
+
+        if (response.ok && result.success) {
+
+            message.textContent =
+                "✨ Your details were submitted successfully!";
+
+            message.style.color = "#7CFF9B";
+
+            form.reset();
+
+            stateSelect.innerHTML =
+                '<option value="">Select state / province / region</option>';
+
+        } else {
+
+            message.textContent =
+                result.message || "Something went wrong.";
+
+            message.style.color = "#ff7777";
+
+        }
+
+    } catch (error) {
+
+        console.error("Submission error:", error);
+
+        message.textContent =
+            "Unable to connect to Glow Astro. Please try again.";
+
+        message.style.color = "#ff7777";
+
+    }
+
+});
