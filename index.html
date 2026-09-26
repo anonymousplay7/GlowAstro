@@ -3,88 +3,123 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Glow Astro</title>
+    <title>Glow Astro | Your Cosmic Guide</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-<div class="container">
+<!-- =========================
+     HEADER
+========================= -->
 
-    <div class="glow-card">
+<header class="header">
 
-        <!-- GLOW ASTRO HEADER -->
+    <div class="logo-area">
 
-        <h1>✨ Glow Astro</h1>
+        <div class="logo-star">✦</div>
 
-        <p class="subtitle">
-            Discover your cosmic journey
-        </p>
-
-
-        <!-- YOUTUBE SECTION -->
-
-        <div class="youtube-section">
-
-            <div class="youtube-icon">
-                ▶
-            </div>
-
-            <h2>🌟 Glow Astro on YouTube</h2>
-
-            <p>
-                Welcome to Glow Astro — your destination for
-                astrology, zodiac signs, cosmic guidance and
-                fascinating insights about the universe.
-            </p>
-
-            <p>
-                Explore astrology content, discover your
-                cosmic personality and learn more about
-                the mysteries written in the stars.
-            </p>
-
-            <p class="youtube-message">
-                🎥 Watch our latest videos and join the
-                Glow Astro community!
-            </p>
-
-            <a
-                href="https://www.youtube.com/@GlowAstro9"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="youtube-button"
-            >
-                ▶️ Visit Glow Astro on YouTube
-            </a>
-
-            <p class="subscribe-text">
-                🔔 Subscribe to @GlowAstro9 for more astrology content!
-            </p>
-
+        <div>
+            <div class="logo-text">Glow Astro</div>
+            <div class="logo-subtitle">YOUR COSMIC GUIDE</div>
         </div>
 
+    </div>
 
-        <!-- VISITOR FORM -->
 
-        <h2 class="form-title">
-            🔮 Discover Your Cosmic Journey
-        </h2>
+    <nav class="navigation">
 
-        <p class="form-description">
-            Enter your birth details below to continue.
+        <a href="#home" class="active">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+
+        <a
+            href="https://www.youtube.com/@GlowAstro9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="youtube-header"
+        >
+            <span class="youtube-icon">▶</span>
+
+            <span>
+                YouTube<br>
+                <strong>Glow Astro</strong>
+            </span>
+        </a>
+
+    </nav>
+
+</header>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-decoration left">☼</div>
+
+    <div class="hero-content">
+
+        <h1>Glow Astro</h1>
+
+        <div class="hero-subtitle">
+            Y O U R &nbsp; C O S M I C &nbsp; G U I D E
+        </div>
+
+        <div class="gold-line">
+            <span></span>
+            ✦
+            <span></span>
+        </div>
+
+        <p>
+            Discover your path through the stars<br>
+            with ancient wisdom and modern insights.
         </p>
 
+    </div>
 
-        <form id="astroForm">
+    <div class="hero-decoration right">☽</div>
 
-            <!-- NAME -->
+</section>
+
+
+<!-- =========================
+     BIRTH DETAILS
+========================= -->
+
+<main>
+
+<section class="details-card">
+
+    <div class="section-title">
+
+        <span>✦</span>
+
+        <h2>Enter Your Birth Details</h2>
+
+    </div>
+
+    <p class="section-description">
+        Fill in the information below to get your personalized astrology reading.
+    </p>
+
+
+    <form id="astroForm">
+
+
+        <!-- NAME -->
+
+        <div class="form-group">
 
             <label for="name">
+                <span class="label-icon">♙</span>
                 Name
             </label>
 
@@ -92,14 +127,19 @@
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Enter your name"
+                placeholder="Enter your full name"
                 required
             >
 
+        </div>
 
-            <!-- GENDER -->
+
+        <!-- GENDER -->
+
+        <div class="form-group">
 
             <label for="gender">
+                <span class="label-icon">⚥</span>
                 Gender
             </label>
 
@@ -110,7 +150,7 @@
             >
 
                 <option value="">
-                    Select gender
+                    Select Gender
                 </option>
 
                 <option value="Male">
@@ -127,25 +167,75 @@
 
             </select>
 
+        </div>
 
-            <!-- DATE -->
 
-            <label for="date_of_birth">
+        <!-- DATE OF BIRTH -->
+
+        <div class="form-group">
+
+            <label>
+                <span class="label-icon">▣</span>
                 Date of Birth
             </label>
 
-            <input
-                type="date"
-                id="date_of_birth"
-                name="date_of_birth"
-                required
-            >
+
+            <div class="date-row">
+
+                <select id="birth_day" required>
+
+                    <option value="">
+                        Day
+                    </option>
+
+                </select>
 
 
-            <!-- TIME -->
+                <select id="birth_month" required>
+
+                    <option value="">
+                        Month
+                    </option>
+
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11">November</option>
+                    <option value="12">December</option>
+
+                </select>
+
+
+                <select id="birth_year" required>
+
+                    <option value="">
+                        Year
+                    </option>
+
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- TIME OF BIRTH -->
+
+        <div class="form-group">
 
             <label for="time_of_birth">
+
+                <span class="label-icon">◷</span>
+
                 Time of Birth
+
             </label>
 
             <input
@@ -155,96 +245,262 @@
                 required
             >
 
+            <small>
+                HH : MM
+            </small>
 
-            <!-- COUNTRY -->
+        </div>
 
-            <label for="country">
-                Country
+
+        <!-- PLACE OF BIRTH -->
+
+        <div class="form-group">
+
+            <label>
+
+                <span class="label-icon">●</span>
+
+                Place of Birth
+
             </label>
 
-            <select
-                id="country"
-                name="country"
-                required
-            >
 
-                <option value="">
-                    Loading countries...
-                </option>
-
-            </select>
+            <div class="place-row">
 
 
-            <!-- STATE -->
+                <!-- COUNTRY -->
 
-            <label for="state">
-                State / Province / Region
-            </label>
+                <select
+                    id="country"
+                    name="country"
+                    required
+                >
 
-            <select
-                id="state"
-                name="state"
-                required
-            >
+                    <option value="">
+                        Loading countries...
+                    </option>
 
-                <option value="">
-                    Select state / province / region
-                </option>
-
-            </select>
+                </select>
 
 
-            <!-- CITY -->
+                <!-- STATE -->
 
-            <label for="city">
-                City
-            </label>
+                <select
+                    id="state"
+                    name="state"
+                    required
+                >
 
-            <input
-                type="text"
-                id="city"
-                name="city"
-                placeholder="Enter your city"
-                required
-            >
+                    <option value="">
+                        Select State
+                    </option>
 
-
-            <!-- SUBMIT -->
-
-            <button
-                type="submit"
-                class="submit-button"
-            >
-                ✨ Submit Details
-            </button>
+                </select>
 
 
-            <p id="message"></p>
+                <!-- CITY -->
 
-        </form>
+                <input
+                    type="text"
+                    id="city"
+                    name="city"
+                    placeholder="District / City"
+                    required
+                >
+
+            </div>
+
+        </div>
 
 
-        <!-- FOOTER -->
+        <!-- SAVE -->
 
-        <div class="footer">
+        <button
+            type="submit"
+            class="save-button"
+        >
 
-            <p>
-                ✨ Glow Astro
-            </p>
+            <span>▣</span>
 
-            <p>
-                Explore the stars. Discover yourself.
-            </p>
+            Save Details
 
+        </button>
+
+
+        <p id="message"></p>
+
+
+    </form>
+
+</section>
+
+
+<!-- =========================
+     ABOUT
+========================= -->
+
+<section
+    class="about-card"
+    id="about"
+>
+
+    <div class="about-image">
+
+        <div class="portrait-circle">
+            <span>✨</span>
         </div>
 
     </div>
 
-</div>
+
+    <div class="about-content">
+
+        <h2>
+            About Glow Astro
+        </h2>
+
+        <p>
+            Glow Astro is a YouTube channel created to bring you
+            the wisdom of astrology in a simple, positive and
+            easy-to-understand way.
+        </p>
+
+        <p>
+            Through our videos, we share zodiac insights,
+            spiritual guidance, and helpful tips to support
+            your journey in love, career, health and life.
+        </p>
+
+        <p>
+            You can find us on YouTube at
+            <strong>@GlowAstro9</strong>.
+        </p>
+
+
+        <a
+            href="https://www.youtube.com/@GlowAstro9"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="about-youtube"
+        >
+
+            <span class="youtube-red">▶</span>
+
+            Visit Glow Astro on YouTube
+
+            <span>↗</span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     SERVICES
+========================= -->
+
+<section id="services" class="simple-section">
+
+    <h2>Our Services</h2>
+
+    <p>
+        Explore astrology insights and discover more about
+        your cosmic journey.
+    </p>
+
+</section>
+
+
+<!-- =========================
+     CONTACT
+========================= -->
+
+<section id="contact" class="simple-section">
+
+    <h2>Contact</h2>
+
+    <p>
+        Connect with Glow Astro through our YouTube channel.
+    </p>
+
+    <a
+        href="https://www.youtube.com/@GlowAstro9"
+        target="_blank"
+        rel="noopener noreferrer"
+    >
+        @GlowAstro9
+    </a>
+
+</section>
+
+</main>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="footer-logo">
+
+        <span>✦</span>
+
+        <div>
+            <strong>Glow Astro</strong>
+            <small>YOUR COSMIC GUIDE</small>
+        </div>
+
+    </div>
+
+
+    <div class="footer-links">
+
+        <a href="#home">Home</a>
+        <span>|</span>
+
+        <a href="#about">About</a>
+        <span>|</span>
+
+        <a href="#services">Services</a>
+        <span>|</span>
+
+        <a href="#contact">Contact</a>
+
+    </div>
+
+
+    <a
+        href="https://www.youtube.com/@GlowAstro9"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="footer-youtube"
+    >
+
+        <span>▶</span>
+
+        Glow Astro
+
+    </a>
+
+
+    <div class="copyright">
+
+        © 2025 Glow Astro. All rights reserved.
+
+        <span>
+            Let the stars guide you ✦
+        </span>
+
+    </div>
+
+</footer>
 
 
 <script src="script.js"></script>
 
 </body>
 
-</html>
+    </html>
