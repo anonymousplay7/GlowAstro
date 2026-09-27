@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://glow-astro.onrender.com/sitemap.xml
